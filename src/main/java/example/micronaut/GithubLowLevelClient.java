@@ -16,6 +16,7 @@ import static io.micronaut.http.HttpHeaders.USER_AGENT;
 
 @Singleton
 public class GithubLowLevelClient {
+
     private final HttpClient httpClient;
     private final URI uri;
 
@@ -35,5 +36,4 @@ public class GithubLowLevelClient {
                 .header(ACCEPT, "application/vnd.github.v3+json, application/json");
         return httpClient.retrieve(req, Argument.listOf(GithubRelease.class));
     }
-
 }
